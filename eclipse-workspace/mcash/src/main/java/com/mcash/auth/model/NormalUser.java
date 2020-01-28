@@ -9,14 +9,15 @@ import javax.persistence.Table;
 @Table(name = "normal_user")
 public class NormalUser extends User implements Serializable{
 
+	public NormalUser(String username, String password, String passwordConfirm, Set roles) {
+		super(username, password, passwordConfirm, roles);
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public NormalUser(Long id, String username, String password, String passwordConfirm, Set roles) {
-		super(id, username, password, passwordConfirm, roles);
-		// TODO Auto-generated constructor stub
-	}
-
+	
 }

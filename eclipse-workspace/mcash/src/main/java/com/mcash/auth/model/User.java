@@ -10,15 +10,16 @@ import javax.persistence.Id;
 import org.hibernate.annotations.ColumnDefault;
 
 public abstract class User {
-	public User(Long id, String username, String password, String passwordConfirm, Set roles) {
+	
+	
+	
+	public User(String username, String password, String passwordConfirm, Set roles) {
 		super();
-		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.passwordConfirm = passwordConfirm;
 		this.roles = roles;
 	}
-	
 	@Column(name = "username", unique = true)
 	private String username;
 	@Column(name = "password", unique = true)
@@ -27,12 +28,7 @@ public abstract class User {
 	private String passwordConfirm;
 	@Column(name = "roles", unique = true)
 	private Set roles;
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 	public String getUsername() {
 		return username;
 	}

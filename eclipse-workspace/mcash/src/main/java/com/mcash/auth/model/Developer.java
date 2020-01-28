@@ -15,8 +15,10 @@ import org.hibernate.annotations.ColumnDefault;
 @Table(name = "developer")
 public class Developer extends User implements Serializable{
 
-	public Developer( String username, String password, String passwordConfirm, Set roles) {
-		super(id, username, password, passwordConfirm, roles);
+
+
+	public Developer(String username, String password, String passwordConfirm, Set roles) {
+		super(username, password, passwordConfirm, roles);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -25,15 +27,5 @@ public class Developer extends User implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ColumnDefault(value = "1")
 	private Long id;
-	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		super.setId(id);
-	}
 	
-	@Override
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return super.getId();
-	}
 }
