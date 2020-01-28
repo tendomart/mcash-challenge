@@ -18,7 +18,11 @@ public abstract class User {
 		this.passwordConfirm = passwordConfirm;
 		this.roles = roles;
 	}
-	
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ColumnDefault(value = "1")
+	private Long id;
 	@Column(name = "username", unique = true)
 	private String username;
 	@Column(name = "password", unique = true)
